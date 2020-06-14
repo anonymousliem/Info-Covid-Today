@@ -6,6 +6,7 @@ import App from '../src/App'
 import Covid from './page/COVID/index'
 // import User from './page/user/index' 
 import Notfound from './notfound'
+import AboutUs from './page/COVID/AboutUs'
 // import login from '../src/page/login/index'
 // import register from '../src/page/register/index'
 // import logout from '../src/page/logout/logout'
@@ -23,6 +24,7 @@ const routing = (
         {/* <Route exact path="/note" component={Note} />
         <Route path="/user" component={User} /> */}
         <Route path="/covid" component={Covid} />
+        <Route path="/aboutus" component={AboutUs} />
         {/* <Route exact path="/login" component={login} />
         <Route exact path="/register" component={register} />
         <Route exact path="/logout" component={logout} />

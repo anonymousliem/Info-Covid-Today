@@ -8,6 +8,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import {Line} from 'react-chartjs-2';
 
 var moment = require('moment'); // require
 
@@ -19,6 +20,16 @@ export default class index extends Component {
 }  
 
     componentDidMount(){
+
+      axios({
+        "method":"GET",
+        "url":"https://indonesia-covid-19.mathdro.id/api/harian",
+        }).then((response)=>{
+          console.log(response.data.data[0])}
+        ).catch((response)=>{
+          console.log(response)}
+        )
+
         // var Role = localStorage.getItem("Role")
         // var status = localStorage.getItem("token");
         // if(!status){
@@ -31,9 +42,7 @@ export default class index extends Component {
         //     }
         // }
     
-      
-
-        
+ 
         axios({
             "method":"GET",
             "url":"https://covid-193.p.rapidapi.com/history",
@@ -132,7 +141,21 @@ export default class index extends Component {
 
     }
     render() {
-  
+      const state = {
+        labels: ['January', 'February', 'March',
+                'April', 'May'],
+        datasets: [
+          {
+            label: 'Rainfall',
+            fill: false,
+            lineTension: 0.5,
+            backgroundColor: 'rgba(75,192,192,1)',
+            borderColor: 'rgba(0,0,0,1)',
+            borderWidth: 2,
+            data: [65, 59, 80, 81, 56]
+          }
+        ]
+      }
 
           const paperStyle = {
             textAlign: 'center',
@@ -231,8 +254,7 @@ export default class index extends Component {
     </div>
           <br />
           <p> &nbsp; *Sumber :  https://rapidapi.com/api-sports/api/covid-193?endpoint=apiendpoint_dfb9e52d-bd90-48ec-a571-8b78610a736d</p>
-     
-                  
+
             </div>
         )
     }

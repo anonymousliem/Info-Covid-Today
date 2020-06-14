@@ -16,6 +16,7 @@ export default class menu extends Component {
         <div>
         <ul>
 <li><Link to="/covid">Home</Link></li>
+<li><Link to="/aboutus">About Us</Link></li>
   {/* <li><Link to="/account">Account</Link></li>
   <li><Link to="/note">Note</Link></li>
   <li><Link to="/allnotes">All Notes</Link></li>
